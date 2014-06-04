@@ -2,12 +2,12 @@ Summary:	Povides real-time display of the active processes from a remote apache 
 Name:		apache-top
 Version:	0.1
 # date when fetched from git
-Release:	0.20140604.1
+Release:	0.20140604.2
 License:	GPL v2
 Group:		Applications/System
-Source0:	https://raw.githubusercontent.com/fr3nd/apache-top/master/%{name}.py
-# Source0-md5:	639f12becdbeb1a915b3d982728bf61b
-URL:		http://www.fr3nd.net/projects/apache-top/
+Source0:	http://www.isartor.org/w/images/3/39/Apache-top.py
+# Source0-md5:	4843daed2cbac7346c31d6cf0fcf6c1b
+URL:		http://www.isartor.org/wiki/Monitor_you_Apache_processes
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.219
 Requires:	python >= 1:2.7
