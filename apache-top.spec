@@ -1,4 +1,4 @@
-Summary:	Povides real-time display of the active processes from a remote apache server
+Summary:	Provides real-time display of the active processes from a remote Apache HTTP server
 Name:		apache-top
 Version:	0.1
 # date when fetched from git
@@ -17,28 +17,26 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 apache-top provides real-time display of the active processes from a
-remote apache server. I’ts like the top linux command.
+remote Apache HTTP server. It's like the top Linux command.
 
 With apache-top you can get:
-
-The active apache processes with their associated PID, the status, the
-seconds being active, the CPU usage, the asociated VirtualHost, the
-accessing ip and the request (POST or GET, the file being accessed and
-the used protocol) The server uptime and the last time it was
-restarted The CPU usage Requests by second, Kb by second and the
-average Kb by request Number of active and inactive processes A graph
-with the inactive and active processes and their status
+- The active Apache processes with their associated PID, the status,
+  the seconds being active, the CPU usage, the asociated VirtualHost,
+  the accessing ip and the request (POST or GET, the file being accessed
+  and the used protocol)
+- The server uptime and the last time it was restarted
+- The CPU usage
+- Requests by second, Kb by second and the average Kb by request
+- Number of active and inactive processes
+- A graph with the inactive and active processes and their status
 
 %prep
-%setup -q -c -T
-
-%build
+%setup -qcT
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_bindir}
-
-install -m 755 %{SOURCE0} $RPM_BUILD_ROOT%{_bindir}/%{name}
+install -p %{SOURCE0} $RPM_BUILD_ROOT%{_bindir}/%{name}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
