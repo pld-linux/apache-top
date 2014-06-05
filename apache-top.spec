@@ -10,7 +10,7 @@ Source0:	http://www.isartor.org/w/images/3/39/Apache-top.py
 URL:		http://www.isartor.org/wiki/Monitor_you_Apache_processes
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.219
-Requires:	python >= 1:2.7
+BuildRequires:	sed >= 4.0
 Requires:	python-modules >= 1:2.7
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -37,6 +37,7 @@ With apache-top you can get:
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_bindir}
 install -p %{SOURCE0} $RPM_BUILD_ROOT%{_bindir}/%{name}
+%{__sed} -i -e '1s,^#!.*python,#!%{__python},' $RPM_BUILD_ROOT%{_bindir}/%{name}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
