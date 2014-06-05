@@ -8,10 +8,11 @@ Group:		Applications/System
 Source0:	http://www.isartor.org/w/images/3/39/Apache-top.py
 # Source0-md5:	4843daed2cbac7346c31d6cf0fcf6c1b
 URL:		http://www.isartor.org/wiki/Monitor_you_Apache_processes
+BuildRequires:	python-modules >= 1:2.4
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.219
 BuildRequires:	sed >= 4.0
-Requires:	python-modules >= 1:2.7
+Requires:	python-modules
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
